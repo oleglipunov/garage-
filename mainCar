@@ -1,0 +1,97 @@
+
+public class MainCar {
+	
+	public static <T extends Comparable<T>> T maximum(T a, T b, T c)
+	{
+	T max = a;
+	if (b.compareTo(max) > 0)
+	    max = b;
+	if (c.compareTo(max) > 0)
+	    max = c;
+	return max;
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println("Here is the information about cars in your garadge. \n");
+		
+		System.out.println("Car #1:" );
+		Car c1 = new Car();
+		c1.setYear(2011);
+		System.out.println("Year: " +c1.getYear());
+		c1.setTank(14.0);
+		System.out.println("Gas in the tank: " +c1.getTank() + " Gallons");
+		c1.setModel("Honda");
+		System.out.println("Model: " +c1.getModel());
+		System.out.println("Now lets add 1.0 gallons of gas.");
+		c1.pumpGas(1.0);
+		System.out.println(c1.getTank());
+		System.out.println("Now I will display the car #1 using display metod!");
+		c1.display();
+		
+		System.out.println("\nCar #2:" );
+		Car c2 = new Car();
+		c2.setYear(2017);
+		System.out.println("Year: " +c2.getYear());
+		c2.setTank(12.0);
+		System.out.println("Gas in the tank: " +c2.getTank());
+		c2.setModel("Toyota");
+		System.out.println("Model: " +c2.getModel());
+		System.out.println("Now lets add 1.0 gallons of gas.");
+		c2.pumpGas(1.0);
+		System.out.println(c2.getTank());
+		System.out.println("Now I will display the car #2 using display metod!");
+		c2.display();
+		
+		System.out.println("\nCar #3: ");
+		Car c3 = new Car();
+		c3.setYear(2015);
+		System.out.println("Year: " +c3.getYear());
+		c3.setTank(10.0);
+		System.out.println("Gas in the tank: " +c3.getTank());
+		c3.setModel("Ferrari");
+		System.out.println("Model: " +c3.getModel());
+		System.out.println("Now lets add 20.0 gallons of gas.");
+		c3.pumpGas(20.0);
+		System.out.println(c3.getTank());
+		System.out.println("Now I will display the car #3 using display metod!");
+		c3.display();
+		
+		System.out.println("\nCar #4: ");
+		Car c4 = new Car();
+		c4.setYear(2015);
+		System.out.println("Year: " +c4.getYear());
+		c4.setTank(10.0);
+		System.out.println("Gas in the tank: " +c4.getTank());
+		c4.setModel("Ferrari");
+		System.out.println("Model: " +c4.getModel());
+		System.out.println("Now lets add 20.0 gallons of gas.");
+		c4.pumpGas(20.0);
+		System.out.println(c4.getTank());
+		System.out.println("Now I will display the car #4 using display metod!");
+		c4.display();
+		System.out.println("\n");
+		
+		if (c3 == c4)
+			System.out.println("This cars are the same model and year");
+		else
+			System.out.println("The two cars are not the same model and year");
+		
+		if (c3.equals(c4))
+			System.out.println("This cars are the same");
+		else System.out.println("The two cars are not the same model and year using equals");
+	
+		System.out.println("here is the info for first car " + c1);
+		System.out.println("here is the info for first car " + c2);
+		System.out.println("here is the info for first car " + c3);
+		System.out.println("here is the info for first car " + c4);
+		
+		
+		
+		System.out.println("\n\nI will now use function maximum,\n"
+				+ "which will compare the cars, and display the newest car!\n\n" + maximum(c1, c2, c3));
+	}
+		
+	}
+
+

@@ -1,0 +1,72 @@
+public  class Car implements Comparable<Car>{
+    
+	 String model;
+	 int year;
+	 double tank;
+	
+	 //constructor 
+	public Car()
+	{
+	model = "Nissan";
+	year = 2015;
+        tank = 13.00;		
+	}
+
+	public String getModel(){
+	 return model;
+	}
+	public void setModle(String model){
+		this.model =model;
+	}
+	a
+    public int getYear(){
+    	return year;
+    }
+    public void setYear(int year){
+    	this.year=year;
+    }
+    
+    public double getTank(){
+    	return tank;
+    }
+    public void setTank(double tank){
+    	this.tank=tank;
+    }
+    public double pumpGas(double x){
+    	x =15-tank;
+    	return x;
+    }
+    public void display(){
+    	System.out.println("model = " + model  + "	year = " + year + "	tank = " + tank);
+    }
+    @Override
+   public String toString(){
+    	    String s ="";
+            s = s + "Model of the car is: " + model;
+            s = s + ", the year of the car is: " + year;
+            s = s + "and the size of the tank is: " + tank ;
+		return s;
+    }
+    @Override
+    public  boolean equals(Object C){
+    	Car c1 = (Car)C;
+    	String s = c1.model;
+    	int y = c1.year;
+        double t = c1.tank;
+    	if ((s.equals(model))&&(y == year)&&(t==tank))
+    	return true;
+    	else 
+    	return false;
+    }
+    
+ 
+ 
+@Override
+    public int compareTo(Car other)
+ 	{
+ 	if (this.year < other.year) return -1;
+ 	if (this.year > other.year) return 1;
+ 	return 0;
+ 	
+ 	}
+ }
